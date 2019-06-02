@@ -1,0 +1,3 @@
+/home/delinoz/Documents/CLion/SC/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/delinoz/Documents/CLion/SC/cmake-build-debug/CMakeFiles/SC.dir
+/home/delinoz/Documents/CLion/SC/cmake-build-debug/CMakeFiles/edit_cache.dir

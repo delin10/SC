@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/SC.dir/main.cpp.o CMakeFiles/SC.dir/src/Utils.cpp.o CMakeFiles/SC.dir/src/SNLLex.cpp.o CMakeFiles/SC.dir/src/structures.cpp.o CMakeFiles/SC.dir/src/StringUtils.cpp.o  -o SC 
