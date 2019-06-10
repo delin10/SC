@@ -1,0 +1,175 @@
+//
+PROGRAM
+//
+PROGRAM
+//
+ID
+//
+""| TYPE| VAR| PROCEDURE
+//
+""
+TYPE
+//
+TYPE
+//
+ID
+//
+""
+ID
+//
+ID
+//
+INTEGER| CHAR
+ARRAY| RECORD
+ID
+//
+INTEGER
+CHAR
+//
+ARRAY
+RECORD
+//
+ARRAY
+//
+INTC
+//
+INTC
+//
+RECORD
+//
+INTEGER| CHAR
+ARRAY
+//
+""
+INTEGER| CHAR| ARRAY
+//
+ID
+//
+""
+,
+//
+""
+VAR
+//
+VAR
+//
+INTEGER| CHAR|ARRAY| RECORD |ID
+//
+""
+INTEGER| CHAR|ARRAY| RECORD|ID
+//
+ID
+//
+""
+,
+//
+""
+PROCEDURE
+//
+PROCEDURE
+//
+""
+PROCEDURE
+//
+ID
+//
+""
+INTEGER| CHAR|ARRAY| RECORD|VAR | ID
+//
+INTEGER| CHAR|ARRAY| RECORD|VAR | ID
+//
+""
+;
+//
+INTEGER| CHAR|ARRAY| RECORD
+VAR
+//
+ID
+//
+""
+,
+//
+TYPE| VAR| PROCEDURE|""
+//
+BEGIN
+//
+BEGIN
+//
+IF| WHILE| READ| WRITE| RETURN| ID
+//
+""
+;
+//
+IF
+WHILE
+READ
+WRITE
+RETURN
+ID
+//
+""|[| .| :=
+(
+//
+""|[| .| :=
+//
+IF
+//
+WHILE
+//
+READ
+//
+ID
+//
+WRITE
+//
+RETURN
+//
+(
+//
+""
+(| INTC| ID
+//
+""
+(| INTC| ID
+//
+(| INTC| ID
+//
+<| =
+//
+(| INTC| ID
+//
+""
++
+-
+//
+(| INTC| ID
+//
+""
+*
+/
+//
+(
+INTC
+ID
+//
+ID
+//
+""
+[
+.
+//
+ID
+//
+""
+[
+//
+<
+=
+//
++
+//
+-
+//
+*
+//
+/

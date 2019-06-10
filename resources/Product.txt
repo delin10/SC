@@ -1,0 +1,106 @@
+ProgramHead ProgramDeclare ProgramBody .
+PROGRAM ProgramName
+ID
+TypeDecPart VarDecPart ProcDecPart
+
+TypeDec
+TYPE TypeDecList
+TypeId = TypeDef ; TypeDecMore
+
+TypeDecList
+ID
+BaseType
+StructType
+ID
+INTEGER
+CHAR
+ArrayType
+RecType
+ARRAY [ Low .. Top ] OF BaseType
+INTC
+INTC
+Record FieldDecList END
+BaseType IdList ; FieldDecMore
+ArrayType IdList ; FieldDecMore
+
+FieldDecList
+ID IdMore
+
+, IdList
+
+VarDec
+VAR VarDecList
+TypeDef VarIdList ; VarDecMore
+
+VarDecList
+ID VarIdMore
+
+, VarIdList
+
+ProcDec
+PROCEDURE ProcName ( ParamList ) ; ProcDecPart ProcBody ProcDecMore
+
+ProcDec
+ID
+
+ParamDecList
+Param ParamMore
+
+; ParamDecList
+TypeDef FromList
+VAR TypeDef FromList
+ID FidMore
+
+, FromList
+ProgramDeclare
+ProgramBody
+BEGIN StmtList END
+Stmt StmtMore
+
+; StmtList
+ConditionStmt
+LoopStmt
+InputStmt
+OutputStmt
+ReturnStmt
+ID AssignCall
+AssignOp
+ProcCallOp
+VariableMore := Expr
+IF CondExpr THEN StmtList ELSE StmtList FI
+WHILE CondExpr DO StmtList ENDWH
+READ ( InVar )
+ID
+WRITE ( Expr )
+RETURN
+( ProcCallParamList )
+
+Expr ProCallParamMore
+
+ProcCallParamList
+Expr CondExprMore
+CmpOp Expr
+Term TermMore
+
+AddOp Expr
+SubOp Expr
+Factor FactorMore
+
+MultiOp Term
+DivOp Term
+( Expr )
+INTC
+Variable
+ID VariableMore
+
+[ Expr ]
+. StructFieldVar
+ID StructFieldVarMore
+
+[ Expr ]
+<
+=
++
+-
+*
+/

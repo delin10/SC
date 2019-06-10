@@ -1,0 +1,105 @@
+
+
+
+BEGIN
+VAR| BEGIN
+
+
+
+VAR| BEGIN
+
+
+
+
+
+
+
+
+
+
+
+
+
+END
+
+
+END
+;
+;
+
+TYPE| VAR| PROCEDURE| BEGIN
+
+TYPE| VAR| PROCEDURE| BEGIN
+TYPE| VAR| PROCEDURE| BEGIN
+TYPE| VAR| PROCEDURE| BEGIN
+
+;
+;
+
+TYPE| VAR| PROCEDURE| BEGIN
+
+TYPE| VAR| PROCEDURE| BEGIN
+TYPE| VAR| PROCEDURE| BEGIN
+
+
+)
+
+)
+)
+
+;|)
+
+;|)
+;|)
+
+TYPE| VAR| PROCEDURE| BEGIN
+
+
+ELSE| FI| ENDWH| END
+ELSE| FI| ENDWH| END
+
+;
+
+
+
+
+
+;
+
+;
+
+
+
+
+
+
+
+)
+
+)
+
+THEN| DO
+THEN| DO
+:=| *|/| THEN| DO| (| )| INTC| ID| <| =| ]
+:=|THEN| DO| )|]|;|<|DO|ENDWH
+
+
+*|/
+)|;|<|DO|]|+|ENDWH
+
+
+*| /
+
+
+
+:=| *| / |)|;|<|DO|]|+|ENDWH
+
+
+:=
+:=
+
+
+
+
+
+
