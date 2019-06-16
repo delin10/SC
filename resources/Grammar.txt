@@ -34,7 +34,6 @@ ParamMore
 Param
 FromList
 FidMore
-ProcDecPart
 ProcBody
 ProgramBody
 StmtList

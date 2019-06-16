@@ -38,6 +38,7 @@ ID VarIdMore
 , VarIdList
 
 ProcDec
+ProgramDeclare
 PROCEDURE ProcName ( ParamList ) ; ProcDecPart ProcBody ProcDecMore
 
 ProcDec
@@ -52,7 +53,6 @@ VAR TypeDef FromList
 ID FidMore
 
 , FromList
-ProgramDeclare
 ProgramBody
 BEGIN StmtList END
 Stmt StmtMore
@@ -77,7 +77,7 @@ RETURN
 
 Expr ProCallParamMore
 
-ProcCallParamList
+, ProcCallParamList
 Expr CondExprMore
 CmpOp Expr
 Term TermMore
