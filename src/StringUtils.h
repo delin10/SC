@@ -35,6 +35,9 @@ public:
     static int toInt(string str);
 
     static long toLong(string str);
+
+
+    static string intToString(int intValue);
 };
 
 

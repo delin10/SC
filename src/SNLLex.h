@@ -10,15 +10,12 @@
 #include <vector>
 #include "structures.h"
 
-#define END_STATE_NUM -99
 using std::string;
 using std::map;
 using std::vector;
 
 class SNLLex {
 private:
-    char lexTbl[50][128];//词法分析表
-    map<string, char> keyWordMap;
     vector<Token> tokenList;
     string fileName;
     string buffer;
@@ -26,10 +23,6 @@ private:
 
 public:
     SNLLex(string fileName);
-
-    void setLexTbl(string &str);
-
-    void setKeyWord(string &word);
 
     void resolveToken(string &sourceCode);
 
@@ -54,6 +47,10 @@ public:
     int getTokenId();
 
     int findKeyWordTokenId();
+
+    vector<Token> &getTokenList();
+
+    bool getTokenAt(Token &output, size_t pos);
 
     void printLexTbl();
 

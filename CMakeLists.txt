@@ -3,4 +3,4 @@ project(SC)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(SC main.cpp src/Utils.h src/Utils.cpp src/debug.h src/SNLLex.cpp src/SNLLex.h src/structures.cpp src/structures.h src/StringUtils.h src/StringUtils.cpp)
+add_executable(SC main.cpp src/Utils.h src/Utils.cpp src/debug.h src/SNLLex.cpp src/SNLLex.h src/structures.cpp src/structures.h src/StringUtils.h src/StringUtils.cpp src/SNLParse.cpp src/SNLParse.h src/GlobalTbl.cpp src/GlobalTbl.h src/GraphvizUtils.cpp src/GraphvizUtils.h)

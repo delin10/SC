@@ -46,7 +46,7 @@ string StringUtils::trim(string &src) {
 
     string szTmp = "";
     int start, end;
-    for (end = src.length() - 1; isWhiteSpace(src[end]) && end >= 0; --end);
+    for (end = src.length() - 1; end >= 0 && isWhiteSpace(src[end]); --end);
     for (start = 0; src[start] <= 32 && start <= end; ++start);
 
     for (int j = start; j <= end; j++) {
@@ -84,8 +84,9 @@ bool StringUtils::isWhiteSpace(char ch) {
 }
 
 void StringUtils::regexSplit(string &input, vector<string> &container, string seperator) {
+    //段错误
     std::regex re(seperator);
-    std::sregex_token_iterator p(input.begin(), input.end(), re, -1);
+    std::sregex_token_iterator p(input.begin(), input.end(), re,-1);
     std::sregex_token_iterator end;
     while (p != end) {
         container.emplace_back(*p++);
@@ -106,4 +107,12 @@ long StringUtils::toLong(string str) {
     long longValue;
     ss >> longValue;
     return longValue;
+}
+
+string StringUtils::intToString(int intValue) {
+    std::stringstream ss;
+    ss << intValue;
+    string tmp;
+    ss >> tmp;
+    return tmp;
 }

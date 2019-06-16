@@ -1,6 +1,7 @@
 //
 // Created by delinoz on 19-6-1.
 //
+#include <cstdarg>
 #include "Utils.h"
 
 string readFileAsString(string szFileName) {
@@ -24,4 +25,24 @@ string readFileAsString(string szFileName) {
 
     fclose(fp);
     return szFileContent;
+}
+
+void writeLine(string &line, FILE *fp) {
+    fputs(line.c_str(), fp);
+    fputc('\n', fp);
+}
+
+void writeLine(char *line, FILE *fp) {
+    fputs(line, fp);
+    fputc('\n', fp);
+}
+
+void writeLine(FILE *fp, int num, ...) {
+    va_list argLs;
+    va_start(argLs, num);
+    for (int i = 0; i < num; ++i) {
+        fputs(va_arg(argLs, char *), fp);
+    }
+    fputc('\n', fp);
+    va_end(argLs);
 }
