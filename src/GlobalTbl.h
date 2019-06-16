@@ -22,6 +22,8 @@ private:
     char parseTbl[80][128];//语法分析表
     map<string, int> grammarTbl;
     vector<vector<int>> productTbl;
+    vector<int> headers;
+    map<int, vector<int>> productMapper;
     map<string, char> keyWordMap;
 
     void initTbl();
@@ -40,6 +42,10 @@ public:
     void setGrammarTbl(string &file);
 
     void setProductTbl(string &file);
+
+    void setProductMapper(string &file);
+
+    bool hasEmptyProduct(int nonTerminatedGrammar);
 
     bool findGrammarId(string &grammar, int *tmp);
 
@@ -60,6 +66,8 @@ public:
     void printProduct(const vector<int> &product);
 
     void printParseTbl();
+
+    void printLexTbl();
 
     void removeComment(vector<string> &tbl);
 };

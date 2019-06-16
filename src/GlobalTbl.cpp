@@ -70,6 +70,7 @@ void GlobalTbl::setLexTbl(string &file) {
             }
         }
     }
+    //printLexTbl();
 }
 
 /**
@@ -138,9 +139,9 @@ void GlobalTbl::setGrammarTbl(string &file) {
     }
     grammarTbl.insert(pair<string, int>("ID", 1));
     grammarTbl.insert(pair<string, int>("\"\"", 0));
-    for (pair<string, int> g:grammarTbl) {
-        cout << g.first << "," << g.second << endl;
-    }
+//    for (pair<string, int> g:grammarTbl) {
+//        cout << g.first << "," << g.second << endl;
+//    }
 }
 
 void GlobalTbl::setProductTbl(string &file) {
@@ -149,7 +150,7 @@ void GlobalTbl::setProductTbl(string &file) {
     StringUtils::regexSplit(text, productLs, "\n");
     vector<string> productGrammarsBuffer;
     for (string &product:productLs) {
-        cout << "processing " << product << " , empty= " << product.empty() << endl;
+//        cout << "processing " << product << " , empty= " << product.empty() << endl;
         vector<int> productVector;
         if (product.empty()) {
             productVector.push_back(0);
@@ -175,15 +176,51 @@ void GlobalTbl::setProductTbl(string &file) {
         productGrammarsBuffer.clear();
     }
 
-    int productNum = 0;
-    for (vector<int> &productLs:productTbl) {
-        cout << productNum << "-->";
-        for (int &product:productLs) {
-            cout << product << " ";
+//    int productNum = 0;
+//    for (vector<int> &productLss:productTbl) {
+//        cout << productNum << "-->";
+//        for (int &product:productLss) {
+//            cout << product << " ";
+//        }
+//        productNum++;
+//        cout << endl;
+//    }
+}
+
+
+void GlobalTbl::setProductMapper(string &file) {
+    string text = readFileAsString(file);
+    vector<string> headLines;
+    StringUtils::regexSplit(text, headLines, "\n");
+    string cur;
+    for (int i = 0; i < headLines.size(); ++i) {
+        string headTrim = StringUtils::trim(headLines[i]);
+        if (!headTrim.empty()) {
+            cur = headTrim;
         }
-        productNum++;
-        cout << endl;
+        int tmp;
+        if (!findGrammarId(cur, &tmp)) {
+            cout << "error:" << i + 1 << endl;
+            exit(1);
+        }
+        headers.push_back(tmp);
+        vector<int> *products;
+        if (!findInMap(productMapper, tmp, &products)) {
+            productMapper.insert(pair<int, vector<int>>(tmp, vector<int>()));
+            findInMap(productMapper, tmp, &products);
+        }
+        products->push_back(i);
     }
+}
+
+bool GlobalTbl::hasEmptyProduct(int nonTerminatedGrammar) {
+    vector<int> &products = productMapper[nonTerminatedGrammar];
+    for (int num:products) {
+        if (productTbl[num][0] == 0) {
+            return true;
+        }
+    }
+    return false;
 }
 
 bool GlobalTbl::findGrammarId(string &grammar, int *tmp) {
@@ -209,6 +246,8 @@ void GlobalTbl::setParseTbl() {
             nonTeminateSymbol++;
             continue;
         }
+        string name;
+        getGrammar(nonTeminateSymbol + 100, name);
         if (!firstTrim.empty()) {
             vector<string> grammarLs;
             StringUtils::regexSplit(firstTrim, grammarLs, "\\|");
@@ -218,7 +257,7 @@ void GlobalTbl::setParseTbl() {
                 if (findGrammarId(grammarTrim, &tmp)) {
                     //非终结符号--a-->产生式
                     //cout << "tmp = " << tmp << endl;
-                    cout << nonTeminateSymbol << "==" << tmp << "==>" << first << endl;
+                    //cout << "<" << name << ">" << nonTeminateSymbol << "==" << tmp << "==>" << first << endl;
                     parseTbl[nonTeminateSymbol][tmp] = productNum;
                 } else {
                     cout << "error " << first << ",grammar=" << grammar << endl;
@@ -238,6 +277,7 @@ void GlobalTbl::setParseTbl() {
                     int tmp = -1;
                     if (findGrammarId(grammarTrim, &tmp)) {
                         //非终结符号--a-->产生式
+                        //cout << "<" << name << ">" << nonTeminateSymbol << "==" << tmp << "==>" << follow << endl;
                         if (parseTbl[nonTeminateSymbol][tmp] != -99) {
                             cout << "******************conflict" << endl;
                         }
@@ -278,6 +318,10 @@ void GlobalTbl::printParseTbl() {
 
 const vector<int> &GlobalTbl::getProduct(const size_t &grammarId, const size_t &terminatedId) {
     int productId = parseTbl[grammarId - 100][terminatedId];
+    if (productId == END_STATE_NUM) {
+        cout << "无产生式映射" << endl;
+        exit(1);
+    }
     cout << "next product is " << grammarId << "," << terminatedId << "==>" << productId << endl;
     return productTbl[productId];
 }
@@ -300,6 +344,15 @@ void GlobalTbl::printProduct(const vector<int> &product) {
         cout << g << " ";
     }
     cout << endl;
+}
+
+void GlobalTbl::printLexTbl() {
+    for (int i = 0; i < 50; ++i) {
+        for (int j = 0; j < 128; ++j) {
+            cout << (int) getState(i, j) << " ";
+        }
+        cout << endl;
+    }
 }
 
 void GlobalTbl::initTbl() {
