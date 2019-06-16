@@ -1,105 +1,106 @@
 
 
 
+
+PROCEDURE|TYPE|VAR|BEGIN
+
+
+
+PROCEDURE|TYPE|VAR|BEGIN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END
+INTEGER| CHAR| ARRAY
+ID
+END | ;
+,
+TYPE| VAR|PROCEDURE| BEGIN
+VAR
+VAR
+INTEGER| CHAR|ARRAY| RECORD |ID
+TYPE| VAR|PROCEDURE| BEGIN
+INTEGER| CHAR|ARRAY| RECORD|ID
+ID
+;
+,
 BEGIN
-VAR| BEGIN
+PROCEDURE
 
-
-
-VAR| BEGIN
-
-
-
-
-
-
-
-
-
-
-
-
-
-END
-
-
-END
-;
-;
-
-TYPE| VAR| PROCEDURE| BEGIN
-
-TYPE| VAR| PROCEDURE| BEGIN
-TYPE| VAR| PROCEDURE| BEGIN
-TYPE| VAR| PROCEDURE| BEGIN
-
-;
-;
-
-TYPE| VAR| PROCEDURE| BEGIN
-
-TYPE| VAR| PROCEDURE| BEGIN
-TYPE| VAR| PROCEDURE| BEGIN
-
-
+PROCEDURE
+BEGIN
+PROCEDURE
+ID
 )
-
+INTEGER| CHAR|ARRAY| RECORD|VAR | ID
+INTEGER| CHAR|ARRAY| RECORD|VAR | ID
 )
-)
-
+;
+INTEGER| CHAR|ARRAY| RECORD
+VAR
+ID
 ;|)
-
-;|)
-;|)
-
-TYPE| VAR| PROCEDURE| BEGIN
-
-
-ELSE| FI| ENDWH| END
-ELSE| FI| ENDWH| END
-
+,
+BEGIN
+BEGIN
+IF| WHILE| READ| WRITE| RETURN| ID
+END|FI|ELSE|ENDWH|ID
 ;
-
-
-
-
-
-;
-
-;
-
-
-
-
-
-
-
+IF
+WHILE
+READ
+WRITE
+RETURN
+ID
+""|[| .| :=
+(
+""|[| .| :=
+IF
+WHILE
+READ
+ID
+WRITE
+RETURN
+(
 )
-
-)
-
-THEN| DO
-THEN| DO
-:=| *|/| THEN| DO| (| )| INTC| ID| <| =| ]
-:=|THEN| DO| )|]|;|<|DO|ENDWH
-
-
-*|/
-)|;|<|DO|]|+|ENDWH
-
-
-*| /
-
-
-
-:=| *| / |)|;|<|DO|]|+|ENDWH
-
-
-:=
-:=
-
-
-
-
-
-
+(| INTC| ID
+) | ,
+(| INTC| ID
+(| INTC| ID
+<| =
+(| INTC| ID
+ ; | END | FI | ELSE | ENDWH |  ) | ( | INTC | ID | < | = | DO | THEN | ] | ,
++
+-
+(| INTC| ID
++ | - |  ; | END | FI | ELSE | ENDWH |  ) | ( | INTC | ID | < | = | DO | THEN | ] | ,
+*
+/
+(
+INTC
+ID
+ID
+:= | * | / | + | - |  ; | END | FI | ELSE | ENDWH |  ) | ( | INTC | ID | < | = | DO | THEN | ] | ,
+[
+.
+ID
+:= | * | / | + | - |  ; | END | FI | ELSE | ENDWH |  ) | ( | INTC | ID | < | = | DO | THEN | ]
+[
+<
+=
++
+-
+*
+/

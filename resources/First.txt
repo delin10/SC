@@ -65,6 +65,7 @@ ID
 //
 ""
 PROCEDURE
+TYPE| VAR
 //
 PROCEDURE
 //
@@ -88,8 +89,6 @@ ID
 //
 ""
 ,
-//
-TYPE| VAR| PROCEDURE|""
 //
 BEGIN
 //
@@ -127,10 +126,10 @@ RETURN
 (
 //
 ""
-(| INTC| ID
+(| INTC| ID|,
 //
 ""
-(| INTC| ID
+(| INTC| ID|,
 //
 (| INTC| ID
 //
